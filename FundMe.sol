@@ -66,4 +66,13 @@ contract FundMe {
         }
         _;
     }
+
+    // receive and fallback
+    receive() external payable {
+        fund();
+    }
+
+    fallback() external payable {
+        fund();
+    }
 }
